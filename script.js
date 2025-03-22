@@ -10,6 +10,8 @@ const gameBoard = (function () {
       board[i].push(null);
   }
 
+  let numEmptyCells = N * N;
+
   const getBoard = () => board;
 
   const isThreeInARow = (startRow, startColumn, dRow, dColumn) => {
@@ -48,6 +50,8 @@ const gameBoard = (function () {
   };
 
   const reset = () => {
+    numEmptyCells = N * N;
+
     for (let i = 0; i < N; ++i) {
       for (let j = 0; j < N; ++j)
         board[i][j] = null;
@@ -57,8 +61,9 @@ const gameBoard = (function () {
   const markCell = (row, column, marker) => {
     if (board[row][column] !== null)
       return null;
-    else
-      return board[row][column] = marker;
+
+    --numEmptyCells;
+    return board[row][column] = marker;
   };
 
   const printBoard = () => {
