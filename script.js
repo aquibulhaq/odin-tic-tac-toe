@@ -12,6 +12,13 @@ const gameBoard = (function () {
 
   const getBoard = () => board;
 
+  const markCell = (row, column, marker) => {
+    if (board[row][column] !== null)
+      return null;
+    else
+      return board[row][column] = marker;
+  };
+
   const printBoard = () => {
     const prettyBoard = board.map(row => row.map(cell => cell ?? ''));
     console.dir(prettyBoard);
@@ -19,6 +26,7 @@ const gameBoard = (function () {
 
   return {
     getBoard,
+    markCell,
     printBoard,
   };
 })();
