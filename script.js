@@ -24,6 +24,29 @@ const gameBoard = (function () {
     return true;
   };
 
+  const findThreeInARow = () => {
+    // Look for three of a kind along each row
+    for (let r = 0; r < N; ++r) {
+      if (isThreeInARow(r, 0, 0, +1))
+        return board[r][0];
+    }
+
+    // Look for three of a kind along each column
+    for (let c = 0; c < N; ++c) {
+      if (isThreeInARow(0, c, +1, 0))
+        return board[0][c];
+    }
+
+    // Look for three of a kind along each diagonal
+    if (isThreeInARow(0, 0, +1, +1))
+      return board[0][0];
+
+    if (isThreeInARow(2, 0, -1, +1))
+      return board[2][0];
+
+    return null;
+  };
+
   const reset = () => {
     for (let i = 0; i < N; ++i) {
       for (let j = 0; j < N; ++j)
@@ -45,6 +68,7 @@ const gameBoard = (function () {
 
   return {
     getBoard,
+    findThreeInARow,
     reset,
     markCell,
     printBoard,
