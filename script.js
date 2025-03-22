@@ -12,7 +12,13 @@ const gameBoard = (function () {
 
   const getBoard = () => board;
 
+  const printBoard = () => {
+    const prettyBoard = board.map(row => row.map(cell => cell ?? ''));
+    console.dir(prettyBoard);
+  };
+
   return {
     getBoard,
+    printBoard,
   };
 })();
