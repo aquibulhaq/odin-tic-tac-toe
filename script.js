@@ -12,6 +12,13 @@ const gameBoard = (function () {
 
   const getBoard = () => board;
 
+  const reset = () => {
+    for (let i = 0; i < N; ++i) {
+      for (let j = 0; j < N; ++j)
+        board[i][j] = null;
+    }
+  };
+
   const markCell = (row, column, marker) => {
     if (board[row][column] !== null)
       return null;
@@ -26,6 +33,7 @@ const gameBoard = (function () {
 
   return {
     getBoard,
+    reset,
     markCell,
     printBoard,
   };
