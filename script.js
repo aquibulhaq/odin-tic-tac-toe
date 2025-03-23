@@ -115,6 +115,11 @@ const gameController = (function (
     console.log(`${getActivePlayer().name}'s turn.`);
   };
 
+  const printIllegalMove = () => {
+    gameBoard.printBoard();
+    console.log(`${getActivePlayer().name} marked an occupied cell!`);
+  }
+
   const printGameOver = () => {
     console.log('Game over!')
     gameBoard.printBoard();
