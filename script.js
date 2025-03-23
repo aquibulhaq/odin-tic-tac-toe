@@ -156,6 +156,14 @@ const gameController = (function (
     }
   };
 
+  const reset = () => {
+    gameBoard.reset();
+    activePlayerIndex = 0;
+    isGameOver = false;
+    winner = null;
+    printNewRound();
+  };
+
   printNewRound();
 
   return {
@@ -163,6 +171,7 @@ const gameController = (function (
     checkGameOver,
     getWinner,
     playRound,
+    reset,
   };
 })(
   gameBoard,
