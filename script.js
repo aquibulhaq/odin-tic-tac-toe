@@ -129,12 +129,40 @@ const gameController = (function (
       console.log(`${winner.name} wins!`);
   };
 
+  const playRound = (row, column) => {
+    if (isGameOver) {
+      printGameOver();
+      return;
+    }
+
+    console.log(`${getActivePlayer().name} marks cell (${row}, ${column}).`);
+    if (gameBoard.markCell(row, column, getActivePlayer().marker) === null) {
+      printIllegalMove();
+      return;
+    }
+
+    let threeInARow = gameBoard.findThreeInARow();
+    if (threeInARow !== null) {
+      isGameOver = true;
+      winner = getActivePlayer();
+      printGameOver();
+    } else if (gameBoard.getNumEmptyCells() === 0) {
+      isGameOver = true;
+      winner = null;
+      printGameOver();
+    } else {
+      switchActivePlayer();
+      printNewRound();
+    }
+  };
+
   printNewRound();
 
   return {
     getActivePlayer,
     checkGameOver,
     getWinner,
+    playRound,
   };
 })(
   gameBoard,
