@@ -14,6 +14,8 @@ const gameBoard = (function () {
 
   const getBoard = () => board;
 
+  const getNumEmptyCells = () => numEmptyCells;
+
   const isThreeInARow = (startRow, startColumn, dRow, dColumn) => {
     for (
       let r = startRow + dRow, c = startColumn + dColumn;
@@ -73,6 +75,7 @@ const gameBoard = (function () {
 
   return {
     getBoard,
+    getNumEmptyCells,
     findThreeInARow,
     reset,
     markCell,
