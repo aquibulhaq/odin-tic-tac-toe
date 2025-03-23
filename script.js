@@ -97,6 +97,7 @@ const gameController = (function (
   players,
 ) {
   let activePlayerIndex = 0;
+  let isGameOver = false;
 
   const getActivePlayer = () => players[activePlayerIndex];
 
