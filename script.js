@@ -86,3 +86,8 @@ const gameBoard = (function () {
 function Player(name, marker) {
   return { name, marker };
 }
+
+const players = [
+  Player('Player 1', 'X'),
+  Player('Player 2', 'O'),
+];
