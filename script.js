@@ -96,6 +96,8 @@ const gameController = (function (
   gameBoard,
   players,
 ) {
+  let activePlayerIndex = 0;
+
   return {
 
   };
