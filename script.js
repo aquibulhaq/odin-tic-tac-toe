@@ -10,7 +10,9 @@ const gameBoard = (function () {
       board[i].push(null);
   }
 
-  return {
+  const getBoard = () => board;
 
+  return {
+    getBoard,
   };
 })();
