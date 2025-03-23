@@ -94,10 +94,12 @@ const players = [
 
 const gameController = (function (
   gameBoard,
+  players,
 ) {
   return {
 
   };
 })(
   gameBoard,
+  players,
 );
