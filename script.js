@@ -100,6 +100,10 @@ const gameController = (function (
 
   const getActivePlayer = () => players[activePlayerIndex];
 
+  const switchActivePlayer = () => {
+    activePlayerIndex = (activePlayerIndex + 1) % players.length;
+  };
+
   return {
     getActivePlayer,
   };
