@@ -98,8 +98,10 @@ const gameController = (function (
 ) {
   let activePlayerIndex = 0;
 
-  return {
+  const getActivePlayer = () => players[activePlayerIndex];
 
+  return {
+    getActivePlayer,
   };
 })(
   gameBoard,
