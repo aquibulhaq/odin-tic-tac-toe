@@ -82,3 +82,7 @@ const gameBoard = (function () {
     printBoard,
   };
 })();
+
+function Player(name, marker) {
+  return { name, marker };
+}
