@@ -115,6 +115,15 @@ const gameController = (function (
     console.log(`${getActivePlayer().name}'s turn.`);
   };
 
+  const printGameOver = () => {
+    console.log('Game over!')
+    gameBoard.printBoard();
+    if (winner === null)
+      console.log('Draw game.');
+    else
+      console.log(`${winner.name} wins!`);
+  };
+
   printNewRound();
 
   return {
