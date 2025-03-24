@@ -221,5 +221,11 @@ const displayController = (function (gameController) {
   };
   boardDiv.addEventListener('click', handleBoardClick);
 
+  resetBtn.addEventListener('click', () => {
+    gameController.reset();
+    boardDiv.addEventListener('click', handleBoardClick);
+    updateDisplay();
+  });
+
   updateDisplay();
 })(gameController);
