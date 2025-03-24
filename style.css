@@ -7,3 +7,16 @@ html {
 *::before {
   box-sizing: inherit;
 }
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 8px;
+
+  width: 500px;
+  height: 500px;
+  background-color: black;
+
+  text-align: center;
+}
