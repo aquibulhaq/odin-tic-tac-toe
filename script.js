@@ -98,7 +98,7 @@ const gameController = (function (
 ) {
   let activePlayerIndex = 0;
   let isGameOver = false;
-  let winner;
+  let winner = null;
 
   const getActivePlayer = () => players[activePlayerIndex];
 
@@ -107,6 +107,8 @@ const gameController = (function (
   };
 
   const checkGameOver = () => isGameOver;
+
+  const getWinner = () => winner;
 
   const printNewRound = () => {
     gameBoard.printBoard();
@@ -118,6 +120,7 @@ const gameController = (function (
   return {
     getActivePlayer,
     checkGameOver,
+    getWinner,
   };
 })(
   gameBoard,
