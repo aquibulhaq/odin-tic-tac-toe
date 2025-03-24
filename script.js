@@ -105,6 +105,8 @@ const gameController = (function (
     activePlayerIndex = (activePlayerIndex + 1) % players.length;
   };
 
+  const checkGameOver = () => isGameOver;
+
   const printNewRound = () => {
     gameBoard.printBoard();
     console.log(`${getActivePlayer().name}'s turn.`);
@@ -114,6 +116,7 @@ const gameController = (function (
 
   return {
     getActivePlayer,
+    checkGameOver,
   };
 })(
   gameBoard,
