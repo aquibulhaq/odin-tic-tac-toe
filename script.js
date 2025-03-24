@@ -210,5 +210,15 @@ const displayController = (function (gameController) {
     });
   };
 
+  const handleBoardClick = (event) => {
+    const { row, column } = event.target.dataset;
+    if (!row || !column)
+      return;
+
+    gameController.playRound(Number(row), Number(column));
+    updateDisplay();
+  };
+  boardDiv.addEventListener('click', handleBoardClick);
+
   updateDisplay();
 })(gameController);
