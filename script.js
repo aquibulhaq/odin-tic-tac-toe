@@ -180,5 +180,5 @@ const gameController = (function (
 );
 
 const displayController = (function (gameController) {
-
+  const infoDiv = document.querySelector('.info');
 })(gameController);
