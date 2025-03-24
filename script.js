@@ -182,4 +182,33 @@ const gameController = (function (
 const displayController = (function (gameController) {
   const infoDiv = document.querySelector('.info');
   const boardDiv = document.querySelector('.board');
+
+  const updateDisplay = () => {
+    if (gameController.checkGameOver()) {
+      infoDiv.textContent = 'Game over! ';
+
+      const winner = gameController.getWinner();
+      infoDiv.textContent += winner === null ? 'Draw game.' : `${winner.name} wins!`;
+
+      boardDiv.removeEventListener('click', handleBoardClick);
+    } else {
+      infoDiv.textContent = `${gameController.getActivePlayer().name}'s turn...`;
+    }
+
+    boardDiv.textContent = '';
+
+    gameController.getBoard().forEach((row, i) => {
+      row.forEach((cell, j) => {
+        const cellDiv = document.createElement('button');
+        cellDiv.textContent = cell;
+        cellDiv.classList.add('cell');
+        cellDiv.dataset.row = i;
+        cellDiv.dataset.column = j;
+
+        boardDiv.appendChild(cellDiv);
+      });
+    });
+  };
+
+  updateDisplay();
 })(gameController);
