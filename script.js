@@ -178,3 +178,7 @@ const gameController = (function (
   gameBoard,
   players,
 );
+
+const displayController = (function () {
+
+})();
