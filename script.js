@@ -182,6 +182,7 @@ const gameController = (function (
 const displayController = (function (gameController) {
   const infoDiv = document.querySelector('.info');
   const boardDiv = document.querySelector('.board');
+  const resetBtn = document.querySelector('.reset');
 
   const updateDisplay = () => {
     if (gameController.checkGameOver()) {
