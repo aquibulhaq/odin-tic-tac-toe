@@ -21,6 +21,10 @@ html {
   text-align: center;
 }
 
+button {
+  cursor: pointer;
+}
+
 .cell {
   display: flex;
   justify-content: center;
@@ -35,7 +39,6 @@ html {
   font-size: 2rem;
 
   appearance: none;
-  cursor: pointer;
 }
 
 .cell:active {
