@@ -179,6 +179,6 @@ const gameController = (function (
   players,
 );
 
-const displayController = (function () {
+const displayController = (function (gameController) {
 
-})();
+})(gameController);
