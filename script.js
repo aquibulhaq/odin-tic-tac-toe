@@ -167,6 +167,7 @@ const gameController = (function (
   printNewRound();
 
   return {
+    getBoard: gameBoard.getBoard,
     getActivePlayer,
     checkGameOver,
     getWinner,
