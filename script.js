@@ -45,8 +45,8 @@ const gameBoard = (function () {
     if (isThreeInARow(0, 0, +1, +1))
       return board[0][0];
 
-    if (isThreeInARow(2, 0, -1, +1))
-      return board[2][0];
+    if (isThreeInARow(N - 1, 0, -1, +1))
+      return board[N - 1][0];
 
     return null;
   };
